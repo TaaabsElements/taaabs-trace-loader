@@ -105,7 +105,7 @@
         this._trace.load()
           .then(function() {
             // TODO GET UNIT
-            this._getBeginObsel();
+            this.fire('TRACE_READY');
           }.bind(this))
           .catch(function(err) {
             console.log(err);
@@ -146,7 +146,7 @@
           .then(function(list) {
             // Set the last obsel
             this.set('_eObsel', list[0]);
-            this.fire('TRACE_READY');
+
           }.bind(this))
           .catch(function(err) {
             console.log(err);
